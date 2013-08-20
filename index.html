@@ -5,6 +5,8 @@
     <title>CSS Transitions</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.6/js/esri/css/esri.css">
+    <script src="http://js.arcgis.com/3.6/"></script>
   </head>
   <body>
     <div id="header">
@@ -14,7 +16,7 @@
       <div class="btn" id="button-search">Search</div>
     </div>
     <div id="map-container" class="hidden">
-      <div id="map"></div>
+      <div id="map-div"></div>
     </div>
     <div id="item-container">
       <h2> Item </h2>
@@ -28,17 +30,32 @@
 
   <script>
     $(document).on('ready', function() {
+
+      var map;
+      require(["esri/map", "dojo/domReady!"], function(Map) { 
+        map = new Map("map-div", {
+          center: [-56.049, 38.485],
+          zoom: 3,
+          basemap: "streets",
+          autoResize: true
+        });
+      });
+
+
       $('#button-hide').on('click', function() {
         $('#map-container').appendTo('body').removeClass().addClass('hidden').show();
       });
       $('#button').on('click', function() {
         $('#map-container').appendTo('#item-container').removeClass().addClass('item').show();
+        map.resize();
       });
       $('#button-map').on('click', function() {
         $('#map-container').appendTo('body').removeClass().addClass('full').show();
+        map.resize();
       });
       $('#button-search').on('click', function() {
         $('#map-container').appendTo('#search-container').removeClass().addClass('search').show();
+        map.resize();
       });
     });
   </script>

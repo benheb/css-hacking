@@ -23,6 +23,12 @@ body {
   background:#FFF;
 }
 
+#map-div {
+  position:relative;
+  width: auto !important;
+  height: 100% !important;
+}
+
 #map-container {
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
