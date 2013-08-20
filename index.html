@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>CSS Transitions</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/jquery-1.8.3.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="btn" id="button-hide">"Hide"</div>
+      <div class="btn" id="button">Item</div>
+      <div class="btn" id="button-map">Full</div>
+      <div class="btn" id="button-search">Search</div>
+    </div>
+    <div id="map-container" class="hidden">
+      <div id="map"></div>
+    </div>
+    <div id="item-container">
+      <h2> Item </h2>
+    </div>
+    <div id="search-container">
+      <h2> Search </h2>
+    </div>
+
+  </body>
+
+
+  <script>
+    $(document).on('ready', function() {
+      $('#button-hide').on('click', function() {
+        $('#map-container').appendTo('body').removeClass().addClass('hidden').show();
+      });
+      $('#button').on('click', function() {
+        $('#map-container').appendTo('#item-container').removeClass().addClass('item').show();
+      });
+      $('#button-map').on('click', function() {
+        $('#map-container').appendTo('body').removeClass().addClass('full').show();
+      });
+      $('#button-search').on('click', function() {
+        $('#map-container').appendTo('#search-container').removeClass().addClass('search').show();
+      });
+    });
+  </script>
+</html>
