@@ -43,18 +43,18 @@
 
 
       $('#button-hide').on('click', function() {
-        $('#map-container').appendTo('body').removeClass().addClass('hidden').show();
+        $('#map-container').appendTo('body').removeClass().addClass('hidden');
       });
       $('#button').on('click', function() {
-        $('#map-container').appendTo('#item-container').removeClass().addClass('item').show();
+        $('#map-container').appendTo('#item-container').removeClass().addClass('item');
         map.resize();
       });
       $('#button-map').on('click', function() {
-        $('#map-container').appendTo('body').removeClass().addClass('full').show();
+        $('#map-container').appendTo('body').removeClass().addClass('full');
         map.resize();
       });
       $('#button-search').on('click', function() {
-        $('#map-container').appendTo('#search-container').removeClass().addClass('search').show();
+        $('#map-container').appendTo('#search-container').removeClass().addClass('search');
         map.resize();
       });
     });
